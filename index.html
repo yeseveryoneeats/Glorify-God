@@ -1,1 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glorify God | Digital Monastery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #0b1d2a;
+            --navy-light: #162e3e;
+            --teal-icon: #00607d;
+        }
+        body {
+            font-family: 'Fauna One', serif;
+            background-color: var(--navy);
+            color: #f4f4f4;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Cinzel', serif;
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 1s ease-out forwards;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%);
+            color: #0b1d2a;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        input, textarea {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(212, 175, 55, 0.2) !important;
+            color: white !important;
+        }
+        input:focus, textarea:focus {
+            outline: none !important;
+            border-color: var(--gold) !important;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--navy); }
+        ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 10px; }
+        .featured-img { transition: transform 0.5s ease; }
+        .audio-icon-circle {
+            background-color: var(--teal-icon);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        .prayer-post {
+            border-left: 3px solid var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            animation: fade-in-up 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
 
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#0b1d2a]/90 border-b border-[#d4af37]/30 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">✝</span>
+                <span class="font-serif font-bold text-lg tracking-widest hidden sm:block">GLORIFY GOD</span>
+            </div>
+            <div class="flex gap-4 md:gap-8 text-sm uppercase tracking-wider font-semibold">
+                <a href="#study" class="nav-link">Study</a>
+                <a href="#music" class="nav-link">Music</a>
+                <a href="#prayer-wall" class="nav-link text-[#d4af37]">Prayer Wall</a>
+                <a href="#meditation" class="nav-link">Meditation</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0b1d2a]"></div>
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-[#d4af37]/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="z-10 animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl mb-6 gold-gradient">Glorify God</h1>
+            <p class="text-xl md:text-2xl text-gray-400 italic mb-10 max-w-2xl mx-auto uppercase tracking-widest">
+                with the word
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#prayer-wall" class="btn-gold px-10 py-4 rounded-full font-bold uppercase tracking-widest text-center">Visit Prayer Wall</a>
+                <a href="#study" class="border border-[#d4af37] text-[#d4af37] px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-[#d4af37]/10 transition-colors text-center">Start Study</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl mb-4 text-[#d4af37]">Featured Reading</h2>
+            <div class="w-24 h-1 bg-[#d4af37] mx-auto opacity-50 mt-4"></div>
+        </div>
+        <div class="featured-card relative group overflow-hidden rounded-[2.5rem] card border-[#d4af37]/40 shadow-2xl bg-black">
+            <div class="flex flex-col">
+                <div class="relative w-full aspect-video overflow-hidden">
+                    <img src="https://img.youtube.com/vi/lEayJDOY25Q/maxresdefault.jpg" alt="El Libro de Salmos" class="featured-img object-contain w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-transparent transition-colors">
+                        <div class="w-20 h-20 bg-[#d4af37]/90 rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform">
+                             <svg class="w-10 h-10 text-[#0b1d2a] ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-10 md:p-12 text-center bg-[#0b1d2a]">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <h3 class="text-3xl md:text-4xl text-[#d4af37]">El Libro de Salmos</h3>
+                        <div class="audio-icon-circle">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                        </div>
+                    </div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-gray-500 font-bold mb-6">Reina Valera 1960</p>
+                    <a href="https://www.youtube.com/watch?v=lEayJDOY25Q" target="_blank" class="btn-gold px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm inline-flex items-center gap-3">Listen on YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Wall Section -->
+    <section id="prayer-wall" class="py-24 px-6 max-w-5xl mx-auto border-t border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl mb-4 text-[#d4af37]">Prayer Wall</h2>
+            <p class="text-gray-400 italic text-center max-w-2xl mx-auto text-center">"Bear ye one another's burdens, and so fulfill the law of Christ."</p>
+            <div class="w-24 h-1 bg-[#d4af37] mx-auto opacity-50 mt-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="card p-8 rounded-3xl h-fit">
+                <h3 class="text-xl text-[#d4af37] mb-6 font-serif">Leave a Prayer</h3>
+                <div class="space-y-4">
+                    <input type="text" id="prayer-name" placeholder="Your Name (Optional)" class="w-full p-4 rounded-xl text-white outline-none">
+                    <textarea id="prayer-text" rows="4" placeholder="How can we pray for you? Please use sacred language." class="w-full p-4 rounded-xl text-white outline-none"></textarea>
+                    <div id="prayer-error" class="text-red-400 text-xs italic hidden">Please keep your words sacred and appropriate.</div>
+                    <button onclick="postPrayer()" class="btn-gold w-full py-4 rounded-full font-bold uppercase tracking-widest">Post to Wall</button>
+                </div>
+            </div>
+
+            <div class="card p-8 rounded-3xl max-h-[500px] flex flex-col">
+                <h3 class="text-xl text-[#d4af37] mb-6 font-serif">A Community in Prayer</h3>
+                <div id="prayer-feed" class="space-y-4 overflow-y-auto pr-2 custom-scrollbar flex-grow">
+                    <div class="prayer-post p-4 rounded-xl">
+                        <p class="text-gray-300 text-sm italic">"Praying for peace in the hearts of all who visit this site. May you find rest in His word."</p>
+                        <p class="text-[#d4af37] text-xs mt-2 font-bold">— Admin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Study Section -->
+    <section id="study" class="py-24 bg-[#162e3e]/20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl mb-4 text-[#d4af37]">Scripture Study</h2>
+                <div class="w-24 h-1 bg-[#d4af37] mx-auto opacity-50 mt-4"></div>
+            </div>
+            
+            <div class="mb-20">
+                <h3 class="text-2xl text-center mb-10 font-serif tracking-widest text-[#d4af37]">Spanish Scriptures</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <a href="https://www.churchofjesuschrist.org/study/scriptures/ot?lang=spa" target="_blank" class="card p-8 rounded-3xl hover:border-[#d4af37] transition-all group">
+                        <div class="text-4xl mb-4">📜</div>
+                        <h3 class="text-xl text-[#d4af37]">Old Testament</h3>
+                        <p class="text-xs mt-4 text-[#d4af37] font-bold">Open Scriptures</p>
+                    </a>
+                    <a href="https://www.churchofjesuschrist.org/study/scriptures/nt?lang=spa" target="_blank" class="card p-8 rounded-3xl hover:border-[#d4af37] transition-all group">
+                        <div class="text-4xl mb-4">✝️</div>
+                        <h3 class="text-xl text-[#d4af37]">New Testament</h3>
+                        <p class="text-xs mt-4 text-[#d4af37] font-bold">Open Scriptures</p>
+                    </a>
+                    <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=spa" target="_blank" class="card p-8 rounded-3xl hover:border-[#d4af37] transition-all group">
+                        <div class="text-4xl mb-4">📖</div>
+                        <h3 class="text-xl text-[#d4af37]">Book of Mormon</h3>
+                        <p class="text-xs mt-4 text-[#d4af37] font-bold">Open Scriptures</p>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl text-center mb-10 font-serif tracking-widest text-[#d4af37]">English Scriptures</h3>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <a href="https://www.churchofjesuschrist.org/study/scriptures/ot?lang=eng" target="_blank" class="card p-8 rounded-3xl hover:border-[#d4af37] transition-all group">
+                        <div class="text-4xl mb-4">📜</div>
+                        <h3 class="text-xl text-[#d4af37]">Old Testament</h3>
+                        <p class="text-xs mt-4 text-[#d4af37] font-bold">Open Scriptures</p>
+                    </a>
+                    <a href="https://www.churchofjesuschrist.org/study/scriptures/nt?lang=eng" target="_blank" class="card p-8 rounded-3xl hover:border-[#d4af37] transition-all group">
+                        <div class="text-4xl mb-4">✝️</div>
+                        <h3 class="text-xl text-[#d4af37]">New Testament</h3>
+                        <p class="text-xs mt-4 text-[#d4af37] font-bold">Open Scriptures</p>
+                    </a>
+                    <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng" target="_blank" class="card p-8 rounded-3xl hover:border-[#d4af37] transition-all group">
+                        <div class="text-4xl mb-4">📖</div>
+                        <h3 class="text-xl text-[#d4af37]">Book of Mormon</h3>
+                        <p class="text-xs mt-4 text-[#d4af37] font-bold">Open Scriptures</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-24 px-6 max-w-6xl mx-auto border-t border-white/5 text-center">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl mb-4 text-[#d4af37]">Scripture Music</h2>
+            <div class="w-24 h-1 bg-[#d4af37] mx-auto opacity-50 mt-4 mb-10"></div>
+            <a href="https://suno.com/s/1jlfcim1J1u4CaQ5" target="_blank" class="btn-gold px-12 py-5 rounded-full font-bold uppercase tracking-widest text-sm inline-flex items-center gap-3">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                Listen to Scripture Music
+            </a>
+        </div>
+    </section>
+
+    <!-- Meditation Section -->
+    <section id="meditation" class="py-24 px-6 max-w-5xl mx-auto border-t border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl mb-4 text-[#d4af37]">Guided Meditation</h2>
+            <div id="timer-display" class="mt-10 p-6 bg-[#0b1d2a] rounded-2xl border border-[#d4af37]/20 text-center max-w-sm mx-auto">
+                <div id="time" class="text-4xl font-mono mb-4 text-[#d4af37]">05:00</div>
+                <button id="start-btn" onclick="startTimer()" class="btn-gold px-8 py-2 rounded-lg text-sm uppercase font-bold">Start Quiet Time</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto border-t border-white/5">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl mb-4 text-[#d4af37]">Contact Me</h2>
+            <div class="w-24 h-1 bg-[#d4af37] mx-auto opacity-50 mt-4"></div>
+        </div>
+        <div class="card p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+            <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 relative z-10 text-center">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" id="user-name" required placeholder="Name" class="p-4 rounded-xl w-full text-white">
+                    <input type="email" id="user-email" required placeholder="Email address" class="p-4 rounded-xl w-full text-white">
+                </div>
+                <textarea id="user-message" required rows="5" placeholder="How can I help you today?" class="p-4 rounded-xl w-full text-white"></textarea>
+                <button type="submit" class="btn-gold px-12 py-4 rounded-full font-bold uppercase tracking-widest w-full md:w-auto mt-4 text-center">Send Message</button>
+            </form>
+            <div id="form-success" class="hidden absolute inset-0 bg-[#0b1d2a]/95 flex flex-col justify-center items-center text-center p-8 z-20">
+                <h3 class="text-2xl text-[#d4af37] mb-2 font-serif">Message Sent</h3>
+                <p class="text-gray-400">Thank you for reaching out. May peace be with you.</p>
+                <button onclick="resetForm()" class="mt-8 text-[#d4af37] border-b border-[#d4af37] uppercase text-xs tracking-widest font-bold">Send another</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="py-24 px-6 max-w-6xl mx-auto border-t border-white/5">
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <a href="https://www.youtube.com/@ElfegoWences" target="_blank" class="card p-8 rounded-3xl hover:bg-white/5 transition-all">
+                <h3 class="text-xl mb-4 text-[#d4af37]">YouTube</h3>
+                <span class="text-xs uppercase font-bold tracking-widest border-b border-[#d4af37] pb-1">Visit Channel</span>
+            </a>
+            <a href="https://www.facebook.com/groups/1357321161979648" target="_blank" class="card p-8 rounded-3xl hover:bg-white/5 transition-all">
+                <h3 class="text-xl mb-4 text-[#d4af37]">Community Group</h3>
+                <span class="text-xs uppercase font-bold tracking-widest border-b border-[#d4af37] pb-1">Join Facebook Group</span>
+            </a>
+            <a href="https://www.instagram.com/elfeowences/" target="_blank" class="card p-8 rounded-3xl hover:bg-white/5 transition-all">
+                <h3 class="text-xl mb-4 text-[#d4af37]">Instagram</h3>
+                <span class="text-xs uppercase font-bold tracking-widest border-b border-[#d4af37] pb-1">Follow Us</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Seekers Section -->
+    <section id="share" class="py-24 bg-gradient-to-t from-[#0b1d2a] to-[#162e3e] px-6 text-center">
+        <div class="max-w-3xl mx-auto card p-12 rounded-[3rem] border-[#d4af37]/40 shadow-2xl">
+            <h2 class="text-3xl md:text-5xl mb-6 text-[#d4af37]">Seekers of Truth</h2>
+            <p class="text-lg text-gray-300 mb-10 leading-relaxed italic text-center text-center">
+                Are you looking for more information? Connect with missionaries to learn more about Jesus Christ.
+            </p>
+            <a href="https://www.churchofjesuschrist.org/serve/share?lang=eng" target="_blank" class="btn-gold px-12 py-5 rounded-full font-bold uppercase tracking-widest text-lg inline-block shadow-lg transition-transform hover:scale-105 text-center">
+                🤝 Connect with Missionaries
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 text-center border-t border-white/5 opacity-50 text-sm">
+        <p class="font-serif tracking-widest mb-2 text-center text-center uppercase">Glorify God</p>
+        <p class="text-center text-center">&copy; 2026 Digital Monastery. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const bannedWords = ["badword1", "badword2", "spam", "abuse"];
+
+        function postPrayer() {
+            const nameInput = document.getElementById('prayer-name');
+            const textInput = document.getElementById('prayer-text');
+            const errorMsg = document.getElementById('prayer-error');
+            const feed = document.getElementById('prayer-feed');
+
+            let name = nameInput.value.trim() || "Anonymous Seeker";
+            let text = textInput.value.trim();
+
+            if (!text) return;
+
+            const isInappropriate = bannedWords.some(word => text.toLowerCase().includes(word.toLowerCase()));
+
+            if (isInappropriate) {
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            errorMsg.classList.add('hidden');
+
+            const div = document.createElement('div');
+            div.className = "prayer-post p-4 rounded-xl text-left";
+            div.innerHTML = `
+                <p class="text-gray-300 text-sm italic">"${text}"</p>
+                <p class="text-[#d4af37] text-xs mt-2 font-bold">— ${name}</p>
+            `;
+
+            feed.prepend(div);
+            nameInput.value = "";
+            textInput.value = "";
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const success = document.getElementById('form-success');
+            const btn = form.querySelector('button');
+            btn.innerText = "SENDING...";
+            btn.disabled = true;
+            setTimeout(() => {
+                form.classList.add('opacity-0');
+                success.classList.remove('hidden');
+                success.classList.add('flex');
+            }, 1000);
+        }
+
+        function resetForm() {
+            const form = document.getElementById('contact-form');
+            const success = document.getElementById('form-success');
+            form.reset();
+            form.classList.remove('opacity-0');
+            form.querySelector('button').innerText = "SEND MESSAGE";
+            form.querySelector('button').disabled = false;
+            success.classList.add('hidden');
+            success.classList.remove('flex');
+        }
+
+        let timerInstance;
+        function startTimer() {
+            const display = document.getElementById('time');
+            const btn = document.getElementById('start-btn');
+            if (btn.innerText === "START QUIET TIME") {
+                let time = 300;
+                btn.innerText = "PAUSE";
+                timerInstance = setInterval(() => {
+                    let minutes = Math.floor(time / 60);
+                    let seconds = time % 60;
+                    display.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    if (time <= 0) {
+                        clearInterval(timerInstance);
+                        display.innerText = "AMEN";
+                        btn.innerText = "RESET";
+                    }
+                    time--;
+                }, 1000);
+            } else if (btn.innerText === "PAUSE") {
+                clearInterval(timerInstance);
+                btn.innerText = "RESUME";
+            } else if (btn.innerText === "RESUME") {
+                startTimer();
+                btn.innerText = "PAUSE";
+            } else {
+                clearInterval(timerInstance);
+                display.innerText = "05:00";
+                btn.innerText = "START QUIET TIME";
+            }
+        }
+    </script>
+</body>
+</html>
